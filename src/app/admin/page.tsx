@@ -1,6 +1,8 @@
 import { db } from "@/lib/db";
 import { AlertTriangle, CheckCircle, XCircle, FileText } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminQueue() {
   const result = await db.execute("SELECT * FROM listings WHERE status = 'active' ORDER BY created_at DESC LIMIT 50");
   const listings = result.rows;

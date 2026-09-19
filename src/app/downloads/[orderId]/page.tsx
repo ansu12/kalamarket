@@ -1,6 +1,8 @@
 import { db } from "@/lib/db";
 import { Download, Lock, FileArchive } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function DownloadPage({ params }: { params: Promise<{ orderId: string }> }) {
   const { orderId } = await params;
   // Verify order exists and is paid

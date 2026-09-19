@@ -1,5 +1,6 @@
 import { ShoppingBag, ShieldCheck, Globe, Star, ShoppingCart } from "lucide-react";
 import { db } from "@/lib/db";
+import { Search, MapPin, Star, ShieldCheck, ArrowRight } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 

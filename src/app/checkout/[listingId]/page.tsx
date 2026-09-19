@@ -2,6 +2,8 @@ import { db } from "@/lib/db";
 import { ShieldCheck, Lock, ArrowRight } from "lucide-react";
 import { redirect } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default async function CheckoutPage({ params }: { params: Promise<{ listingId: string }> }) {
   const { listingId } = await params;
   // Fetch listing details

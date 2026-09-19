@@ -7,6 +7,8 @@ async function getShopListings(shopId: string) {
   return result.rows;
 }
 
+export const dynamic = "force-dynamic";
+
 export default async function ShopProfilePage({ params }: { params: Promise<{ shopId: string }> }) {
   const { shopId } = await params;
   const listings = await getShopListings(shopId);
