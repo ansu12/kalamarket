@@ -1,0 +1,24 @@
+graph TD
+    A[Buyer/Seller Browser] --> B[Cloudflare Pages Edge/Next.js]
+    
+    subgraph Frontend Routes
+        B --> C[Public Shop Page]
+        B --> D[Checkout Flow]
+        B --> E[Seller Studio]
+        B --> F[Admin Queue]
+    end
+    
+    subgraph Backend APIs
+        E --> G[POST /api/listings]
+        D --> H[POST /api/checkout]
+    end
+    
+    subgraph Data Layer
+        G --> I[(Cloudflare D1 / SQLite)]
+        H --> I
+    end
+    
+    subgraph External Services
+        H -.-> J[Stripe / Razorpay]
+        D -.-> K[Cloudflare R2 Storage]
+    end
